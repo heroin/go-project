@@ -17,7 +17,7 @@ const (
 func download(path string) {
 	runtime.Gosched()
 	log.Printf("download start %s \n", path)
-	cmd := exec.Command("wget.exe", "-P", DOWNLOAD_PATH, path)
+	cmd := exec.Command("wget", "-P", DOWNLOAD_PATH, path)
 	err := cmd.Run()
 	if err != nil {
 		log.Printf("download [error] path=%s, ", path, err)
